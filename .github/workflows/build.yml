@@ -1,5 +1,10 @@
 on: [push, pull_request, workflow_dispatch]
 
+include:
+  - board: nice_nano_v2
+    shield: splitkb_aurora_sweep_left
+  - board: nice_nano_v2
+    shield: splitkb_aurora_sweep_right
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
