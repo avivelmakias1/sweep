@@ -72,7 +72,7 @@
            &kp ESC    &kp GRAVE  &kp HASH   &kp DOLLAR &kp PRCNT      &kp DEL    &kp HOME   &kp END    &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ !        │ ' "      │  (       │  )       │  - _     │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │ RSHIFT   |
-           &kp EXCL    &kp SQT   &kp KP_LPAR &kp KP_RPAR &kp MINUS     &kp LARW   &kp DARW   &kp UARW   &kp RARW  &kp RSHIFT
+           &kp EXCL    &kp SQT   &kp LPAR   &kp RPAR   &kp MINUS      &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp RSHIFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ @        │  \ |     │  [ {     │  } ]     │  = +     │   │ INSERT   │  PAGE DN │ PAGE UP  │          │          │
            &kp AT     &kp BSLH  &kp LBKT   &kp RBKT     &kp EQUAL     &kp INS    &kp PG_DN  &kp PG_UP  &trans     &trans
