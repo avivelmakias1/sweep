@@ -9,6 +9,11 @@
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LALT k3  &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RALT k2  &ht RCTRL k3  &ht RSHFT k4
 
+&mt {
+   //  flavor = "tap-preferred";
+   // tapping_term_ms = <200>;
+};
+
 // Layers
 #define BASE 0
 #define NAV 1
@@ -50,7 +55,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &ht NUM TAB  &kp SPACE    &kp BSPC   &ht NAV ENTER
+                                            &mt NUM TAB  &kp SPACE    &kp BSPC   &mt NAV ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
