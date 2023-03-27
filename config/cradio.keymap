@@ -9,16 +9,12 @@
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LALT k3  &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RALT k2  &ht RCTRL k3  &ht RSHFT k4
 
-&mt {
-   //  flavor = "tap-preferred";
-   // tapping_term_ms = <200>;
-};
 
 // Layers
-#define BASE 0
-#define NAV 1
-#define NUM 2
-#define BLE 3
+#define LBASE 0
+#define LNAV 1
+#define LNUM 2
+#define LBLE 3
 / {
     behaviors {
         ht: hold_tap {
@@ -31,13 +27,22 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        lm: layer_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <NAV NUM>;
-            then-layer = <BLE>;
+            if-layers = <LNAV LNUM>;
+            then-layer = <LBLE>;
         };
     };
 
@@ -55,7 +60,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &mt NUM TAB  &kp SPACE    &kp BSPC   &mt NAV ENTER
+                                            &lm LNUM TAB  &kp SPACE    &kp BSPC   &lm LNAV ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
