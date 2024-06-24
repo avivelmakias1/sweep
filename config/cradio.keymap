@@ -79,11 +79,11 @@
         //│ ESC      │  [       │  {       │  (       │  %       │   │  ^       │  )       │  }       │  ]       │  `       │
            &kp ESC    &kp LBKT   &kp LBRC   &kp LPAR   &kp PRCNT      &kp CARET  &kp RPAR   &kp RBRC    &kp RBKT   &kp GRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  ' "     │  =       │  _       │  #       │   │  $       │ RGUI     │ RALT     │ CTRL     │ RSHIFT   |
-           &kp EXCL   &kp SQT    &kp EQUAL  &kp UNDER  &kp HASH       &kp DLLR   &skq RGUI  &skq RALT &skq RCTRL  &skq RSHIFT
+        //│  !       │  ' "     │  =       │  -       │  #       │   │  $       │ RGUI     │ RALT     │ CTRL     │ RSHIFT   |
+           &kp EXCL   &kp SQT    &kp EQUAL  &kp MINUS  &kp HASH       &kp DLLR   &skq RGUI  &skq RALT &skq RCTRL  &skq RSHIFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  @       │  \ |     │  +       │  -       │  &       │   │  *       │          │          │          │          │
-           &kp AT     &kp BSLH   &kp PLUS   &kp MINUS  &kp AMPS       &kp STAR   &trans     &trans     &trans     &trans
+        //│  @       │  \ |     │  +       │  _       │  &       │   │  *       │          │          │          │          │
+           &kp AT     &kp BSLH   &kp PLUS   &kp UNDER  &kp AMPS       &kp STAR   &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
