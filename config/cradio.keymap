@@ -45,8 +45,8 @@
             quick-release;
             ignore-modifiers;
         };
-        // Types "0 85% 1 72%". 0 and 1 are pairing order, not left and right.
-        bat: battery_text {
+        // Types "0+ 85% 1 72%". 0 and 1 are pairing order. + means that half is plugged in.
+        bat: bat {
             compatible = "zmk,behavior-battery-text";
             #binding-cells = <0>;
         };

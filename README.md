@@ -54,8 +54,10 @@ The dongle fetches both halves. The computer is on USB, and USB HID does not
 carry battery levels, so the OS battery icon will not show them.
 
 Hold the two layer thumbs together (nav and sym, which turns on the number
-layer) and tap the left space thumb. The dongle types the levels at the
-cursor, for example `0 85% 1 72%`. `0` is the first half that paired to the
-dongle and `1` is the second. That order is not left and right. The
-characters follow the computer's keyboard layout, same as the number keys.
+layer) and tap the left space thumb. The dongle types both levels, for
+example `0+ 85% 1 72%`. `0` is the first half that paired to the dongle and
+`1` is the second. That order is not left and right. A `+` after the number
+means that half is plugged into USB power, which is when its battery charges.
+One plugged-in half gets one plus. Both plugged in looks like `0+ 85% 1+ 72%`.
+The characters follow the computer's keyboard layout, same as the number keys.
 A display or LED on the dongle is not part of this firmware.
