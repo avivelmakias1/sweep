@@ -16,7 +16,8 @@ config ZMK_SPLIT
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
     default 2
 
-# Peripherals plus the default 5 host profiles.
+# Two halves plus the default 5 profile slots. The slots stay so the
+# keymap's &bt keys stay in range. The dongle does not advertise them.
 config BT_MAX_CONN
     default 7
 

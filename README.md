@@ -1,9 +1,9 @@
 # Sweep
 
 ZMK user config for a Ferris Sweep (`cradio` shield) on nice!nano v2 boards.
-A third nice!nano v2 is the dongle: it is the split central and talks to the
-computer over USB and Bluetooth. Both halves are peripherals. They pair to the
-dongle and do not pair to the computer.
+A third nice!nano v2 is the dongle: it is the split central. It talks to the
+computer over USB only. Both halves are peripherals. They connect to the
+dongle over Bluetooth and do not connect to the computer.
 
 The keymap, layers, and behaviors are `config/cradio.keymap`, shared by the
 dongle and the halves. GitHub Actions builds four firmware files from
@@ -40,9 +40,9 @@ advertise, so flash it to every board before flashing the real firmware.
 4. Plug the dongle into USB, then power both halves. They pair to the dongle
    on their own. If a half does not connect, reset that half and the dongle
    at the same time (reset button, or power them off and on together).
-5. On the computer, remove the old "Cradio" Bluetooth device and pair again
-   if you use Bluetooth. Over USB, the dongle is the keyboard as soon as it
-   is plugged in.
+5. On the computer, remove the old "Cradio" Bluetooth device if it is still
+   listed. The dongle does not advertise as a Bluetooth keyboard. It is the
+   keyboard as soon as the USB cable is plugged in.
 
 A keymap-only change needs a new `cradio_dongle.uf2` on the dongle. The halves
 do not run the keymap. Flash a half again only when its own config changes
@@ -50,9 +50,8 @@ do not run the keymap. Flash a half again only when its own config changes
 
 ## Battery
 
-The dongle fetches both halves and publishes them on a second Bluetooth
-Battery Service, as `Peripheral 0` and `Peripheral 1` (pairing order, not
-left/right). USB HID does not carry those levels. Over Bluetooth, the system
-battery icon shows the dongle's own reading. Reading both halves takes a tool
-that opens the extra Battery Service. A display or LED on the dongle is not
-part of this firmware.
+The dongle fetches both halves (`Peripheral 0` and `Peripheral 1`, pairing
+order, not left/right). The computer is on USB, and USB HID does not carry
+battery levels. The dongle does not advertise Bluetooth to the computer, so
+the OS battery icon will not show the halves. A display or LED on the dongle
+is not part of this firmware.
