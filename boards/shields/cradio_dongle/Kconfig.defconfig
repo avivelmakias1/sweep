@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: MIT
+
+if SHIELD_CRADIO_DONGLE
+
+# Max 16 characters. Same name the left half used when it was the central.
+config ZMK_KEYBOARD_NAME
+    default "Cradio"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT
+    default y
+
+# Left and right halves.
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+# Peripherals plus the default 5 host profiles.
+config BT_MAX_CONN
+    default 7
+
+config BT_MAX_PAIRED
+    default 7
+
+endif
