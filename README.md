@@ -50,8 +50,12 @@ do not run the keymap. Flash a half again only when its own config changes
 
 ## Battery
 
-The dongle fetches both halves (`Peripheral 0` and `Peripheral 1`, pairing
-order, not left/right). The computer is on USB, and USB HID does not carry
-battery levels. The dongle does not advertise Bluetooth to the computer, so
-the OS battery icon will not show the halves. A display or LED on the dongle
-is not part of this firmware.
+The dongle fetches both halves. The computer is on USB, and USB HID does not
+carry battery levels, so the OS battery icon will not show them.
+
+Hold the two layer thumbs together (nav and sym, which turns on the number
+layer) and tap the left space thumb. The dongle types the levels at the
+cursor, for example `0 85% 1 72%`. `0` is the first half that paired to the
+dongle and `1` is the second. That order is not left and right. The
+characters follow the computer's keyboard layout, same as the number keys.
+A display or LED on the dongle is not part of this firmware.

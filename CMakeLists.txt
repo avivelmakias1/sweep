@@ -1,7 +1,10 @@
 # SPDX-License-Identifier: MIT
 
+zephyr_library_named(sweep_zmk)
+zephyr_library_include_directories(${APPLICATION_SOURCE_DIR}/include)
+zephyr_library_sources(src/battery_text.c)
+
 if(CONFIG_SWEEP_USB_ONLY_DONGLE)
-  zephyr_library_named(sweep_usb_only)
   zephyr_library_sources(src/usb_only_dongle.c)
   # These are called from behavior_bt.c, outside ble.c, so the linker wrap
   # runs after ble.c has started host advertising.
