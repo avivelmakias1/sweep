@@ -40,7 +40,6 @@
             #binding-cells = <1>;
             bindings = <&kp>;
             release-after-ms = <1000>;
-            lazy;
             quick-release;
             ignore-modifiers;
         };
