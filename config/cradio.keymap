@@ -3,7 +3,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LALT k3  &ht LGUI k4
@@ -41,9 +40,13 @@
             #binding-cells = <1>;
             bindings = <&kp>;
             release-after-ms = <1000>;
-            lazy;
             quick-release;
             ignore-modifiers;
+        };
+        // Types "0+ 85% 1 72%". 0 and 1 are pairing order. + means that half is plugged in.
+        bat: bat {
+            compatible = "zmk,behavior-battery-text";
+            #binding-cells = <0>;
         };
     };
 
@@ -98,8 +101,8 @@
         //│  LSHIFT  │  LCTRL   │ LALT     │  LGUI    │           │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │  BSPC    │
           &skq LSHIFT &skq LCTRL &skq RALT  &skq LGUI  &trans          &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│PROFILE 0 │PROFILE 1 │PROFILE 2 │          │ CLEAR BT  │   │          │  PGDW    │  PGUP    │          │          │
-        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans  &bt BT_CLR      &trans     &kp PG_DN  &kp PG_UP  &trans     &trans
+        //│          │          │          │          │           │   │          │  PGDW    │  PGUP    │          │          │
+           &trans     &trans     &trans     &trans     &trans          &trans     &kp PG_DN  &kp PG_UP  &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼───────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &trans     &trans          &kp RET     &trans
         //                                 ╰──────────┴───────────╯   ╰──────────┴──────────╯
@@ -117,7 +120,8 @@
         //│  F1      │  F2      │  F3      │  F4      │  F5       │   │  F6      │  F7      │  F8      │  F9      │  F10     │
            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5          &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
         //╰──────────┴──────────┴──────────┼──────────┼───────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &trans     &trans          &trans     &trans
+        // Hold both layer thumbs, then tap the left space thumb.
+                                            &trans     &bat            &trans     &trans
         //                                 ╰──────────┴───────────╯   ╰──────────┴──────────╯
             >;
         };

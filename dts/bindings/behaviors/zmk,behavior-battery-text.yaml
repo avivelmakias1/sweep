@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: MIT
+
+description: Type the battery level of each split peripheral
+
+compatible: "zmk,behavior-battery-text"
+
+include: zero_param.yaml

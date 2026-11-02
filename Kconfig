@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: MIT
+
+config SWEEP_USB_ONLY_DONGLE
+    bool "Do not advertise the dongle as a BLE keyboard"
+    depends on ZMK_BLE
+    help
+      The dongle still uses BLE as the split central, to connect to the
+      halves. It does not advertise itself as a keyboard the computer can
+      pair to. The computer connection is USB HID only.
+
+      Turn this on from the dongle conf. ZMK main has no setting for it.
